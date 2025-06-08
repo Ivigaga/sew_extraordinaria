@@ -1,0 +1,141 @@
+<!--
+Este documento debe mostrar información relativa a la gastronomía típica del concejo
+asturiano. Debe tener al menos los siguientes elementos HTML:
+• Lista ordenada con al menos 3 elementos
+• Lista no ordenada con al menos 3 elementos
+o Uno de los elementos de la lista debe tener una lista anidada, pudiendo ser
+ordenada o no ordenada
+• Lista de definición con al menos 3 elementos
+• Tabla accesible y adaptable de 2 columnas y 4 filas de datos. Se permite el uso del
+atributo “id” para hacer la tabla accesible.
+• Recursos multimedia:
+o Al menos una imagen adaptable y accesible
+o Al menos un vídeo adaptable y accesible servido con al menos 2 formatos
+diferentes. No es obligatorio poner subtítulos
+o Opcionalmente un audio adaptable y accesible servido con al menos 2 formatos
+diferentes. No es obligatorio poner subtítulos
+-->
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Iván García García" />
+    <meta name="description" content="Información sobre la gastronomía de Sariego" />
+    <meta name="keywords" content="Sariego, gastronomía, restaurantes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Datos que describen el documento -->
+    <link rel="icon" href="multimedia/imagenes/escudo.ico" sizes="48x48" 
+        type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    
+    <title>Guía Sariego: Gastronomía</title>
+</head>
+
+<body>
+    <header>
+        <!-- Datos con el contenidos que aparece en el navegador -->
+        <h1><a title="Inicio" href="index.html">Guía Sariego</a></h1>
+        <nav>
+            <a title="Inicio" href="index.html">Inicio</a>
+            <a title="Gastronomía" class="active" href="gastronomia.html">Gastronomía</a>
+            <a title="Rutas" href="rutas.html">Rutas</a>
+            <a title="Meteorología" href="meteorología.html">Meteorología</a>
+            <a title="Juego"  href="juego.html">Juego</a>
+            <a title="Reservas" href="reservas.php">Reservas</a>
+            <a title="Ayuda" href="ayuda.html">Ayuda</a>
+        </nav>
+    </header>
+    <p>Estás en <a title="Inicio" href="index.html">Inicio</a> | Gastronomía </p>
+    <main>
+        <h2>Gastronomía</h2>
+
+        <picture>
+            <source media="(max-width: 683px)"
+                srcset="multimedia/imagenes/gastronomia_xs.jpg">
+            <source media="(max-width: 1366px)"
+                srcset="multimedia/imagenes/gastronomia.jpg">
+            <source media="(min-width: 1366px)"
+                srcset="multimedia/imagenes/gastronomia_xl.jpg">
+            <img src="multimedia/imagenes/gastronomia.jpg" alt="Plato de fabada"/>
+        </picture>
+        
+        <h3>Platos Típicos</h3>
+        <ul>
+            <li>Tortos de maíz con picadillo</li>
+            <li>Cordero guisado</li>
+            <li>Fabada</li>
+        </ul>
+
+        <h3>Fiestas Gastronómicas</h3>
+        <ol>
+            <li>Artroxu
+                <ul>
+                    <li>Pitu caleya</li>
+                    <li>Cerdo</li>
+                    <li>Frisuelos</li>
+                </ul>
+            </li>
+            <li>Jornadas Gastronómicas del Milenario
+                <ul>
+                    <li>Pitu caleya</li>
+                    <li>Fabada</li>
+                    <li>Arroz con leche</li>
+                </ul>
+            </li>
+            <li>Certamen de la Manzana y la Sidra</li>
+        </ol>
+
+
+        <h3>Dónde Comer</h3>
+        
+        <table>
+            <caption>Restaurantes</caption>
+            <tr>
+                <td></td>
+                <th scope="col" id="Dirección">Dirección</th>
+            </tr>
+            <tr>
+                <th scope="row" id="Casería">Sidrería La Casería</th>
+                <td headers="Casería Dirección">Berros - Santiago Asturias ES, Camín de Les Casuques, nº 181, 33518</td>
+            </tr>
+            <tr>
+                <th scope="row" id="Mesón">El Mesón de Sariego</th>
+                <td headers="Mesón Dirección">Moral, s/n, 33518 Moral, Asturias</td>
+            </tr>
+            <tr>
+                <th scope="row" id="Casuca">Taberna La Casuca</th>
+                <td headers="Casuca Dirección">Ctra. Siero a Vega, 78, 33518 La Vega, Asturias</td>
+            </tr>
+            <tr>
+                <th scope="row" id="Rufo">Casa Rufo</th>
+                <td headers="Rufo Dirección">Ctra. Siero a Vega, 33518 La Vega, Asturias</td>
+            </tr>
+        </table>
+        
+    
+        <h3>Entrevista sobre la gastronomía de Sariego</h3>
+        
+        <video controls preload="auto">
+            <source src="multimedia/videos/gastronomia.webm"
+            type="video/webm" />
+            <source src="multimedia/videos/gastronomia.mp4"
+            type="video/mp4" />
+        </video>
+    
+
+    
+        <aside>
+            <h3>Conceptos</h3>
+            <dl>
+                <dt>Pitu caleya</dt>
+                <dd>Plato de carne hecho con pollos alimentados sin piensos y criados en espacios abiertos</dd>
+                <dt>Torto</dt>
+                <dd>Masa de harina de maíz, harina de trigo y sal<dd>
+                <dt>Antroxu</dt>
+                <dd>Fiesta de carnaval</dd>
+            </dl>
+        </aside>
+    </main>
+</body></html>

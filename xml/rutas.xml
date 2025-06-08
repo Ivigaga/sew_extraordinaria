@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rutas xmlns="http://www.uniovi.es"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.uniovi.es rutas.xsd">
+    <ruta>
+        <nombre>La Vega-Acéu</nombre>
+        <tipo>Senderismo</tipo>
+        <transporte>A pie</transporte>
+        <duracion unidades="horas">1.5</duracion>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Ruta que va desde La Vega a Acéu</descripcion>
+        <publico>Apta para todos</publico>
+        <inicio>Plaza de Vega</inicio>
+        <direccion>Plaza de Casimiro Vega, 44, 33518 La Vega, Asturias</direccion>
+        <coordenadas>
+            <longitud>-5.5575</longitud>
+            <latitud>43.41056</latitud>
+            <altitud>292</altitud>
+        </coordenadas>
+        <referencias>
+            <referencia>https://es.wikipedia.org/wiki/Vega_(Sariego)</referencia>
+            <referencia>https://paisaje.asturias.me/comarca-de-la-sidra/c/0/i/77670629/pozu-salau-el</referencia>
+            <referencia>https://www.lne.es/centro/2008/10/05/carcabada-pueblo-ejemplar-21634972.html</referencia>
+        </referencias>
+        <recomendacion>8</recomendacion>
+        <hitos>
+            <hito>
+                <nombre>Fuente Pozu Salau</nombre>
+                <descripcion>Fuente cuyo nivel del agua sube y baja al ritmo del Mar Cantábrico</descripcion>
+                <coordenadas>
+                    <longitud>-5.545008</longitud>
+                    <latitud>43.410651</latitud>
+                    <altitud>278</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1.1</distancia>
+                <imagenes>
+                    <imagen>fuente.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Estatuas de madera</nombre>
+                <descripcion>Figuras de personas de madera</descripcion>
+                <coordenadas>
+                    <longitud>-5.541796</longitud>
+                    <latitud>43.411112</latitud>
+                    <altitud>269</altitud>
+                </coordenadas>
+                <distancia unidades="Km">0.3</distancia>
+                <imagenes>
+                    <imagen>figuras.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Premio al pueblo ejemplar</nombre>
+                <descripcion>Premio al pueblo ejemplar del concejo, dado a Carcabada en el 2008</descripcion>
+                <coordenadas>
+                    <longitud>-5.539354</longitud>
+                    <latitud>43.40946</latitud>
+                    <altitud>284</altitud>
+                </coordenadas>
+                <distancia unidades="Km">0.3</distancia>
+                <imagenes>
+                    <imagen>premio.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Iglesia de San Román</nombre>
+                <descripcion>Templo católico de estilo románico</descripcion>
+                <coordenadas>
+                    <longitud>-5.516392</longitud>
+                    <latitud>43.408092</latitud>
+                    <altitud>304</altitud>
+                </coordenadas>
+                <distancia unidades="Km">2.6</distancia>
+                <imagenes>
+                    <imagen>san_roman.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Acéu</nombre>
+                <descripcion>Fin de la ruta</descripcion>
+                <coordenadas>
+                    <longitud>-5.514832</longitud>
+                    <latitud>43.406689</latitud>
+                    <altitud>327</altitud>
+                </coordenadas>
+                <distancia unidades="Km">0.6</distancia>
+                <imagenes>
+                    <imagen>aceu.jpg</imagen>
+                </imagenes>
+            </hito>
+        </hitos>
+        <planimetria>ruta1.kml</planimetria>
+        <altimetria>ruta1.svg</altimetria>
+    </ruta>
+
+    <ruta>
+        <nombre>Cercanías al cielo</nombre>
+        <tipo>Senderismo</tipo>
+        <transporte>A pie</transporte>
+        <duracion unidades="horas">5</duracion>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Ruta através de los picos de Sariego</descripcion>
+        <publico>Personas en buena forma física</publico>
+        <inicio>Plaza de Vega</inicio>
+        <direccion>Plaza de Casimiro Vega, 44, 33518 La Vega, Asturias</direccion>
+        <coordenadas>
+            
+            <longitud>-5.5575</longitud>
+            <latitud>43.41056</latitud>
+            <altitud>292</altitud>
+        </coordenadas>
+        <referencias>
+            <referencia>https://es.wikipedia.org/wiki/Vega_(Sariego)</referencia>
+            <referencia>https://sariego.vivirasturias.com/poblaciones/c/0/i/61937566/villar</referencia>
+            <referencia>https://www.rtpa.es/noticias-asturias:-La-%27Ruta-de-las-Cercanias-del-Cielo%27-ofrece-un-paisaje-poco-habitual-del-centro-de-Asturias_111646997875.html</referencia>
+        </referencias>
+        <recomendacion>9</recomendacion>
+        <hitos>
+            <hito>
+                <nombre>Villar</nombre>
+                <descripcion>Pueblo rural</descripcion>
+                <coordenadas>
+                    <longitud>-5.569151</longitud>
+                    <latitud>43.417015</latitud>
+                    <altitud>390</altitud>
+                </coordenadas>
+                <distancia unidades="Km">2.2</distancia>
+                <imagenes>
+                    <imagen>villar.png</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Mirador de Perriellos</nombre>
+                <descripcion>Vistas preciosas debido a su estratégica ubicación en el centro de Asturias</descripcion>
+                <coordenadas>
+                    <longitud> -5.5581</longitud>
+                    <latitud> 43.425865</latitud>
+                    <altitud>591</altitud>
+                </coordenadas>
+                <distancia unidades="Km">4.34</distancia>
+                <imagenes>
+                    <imagen>mirador.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Pico</nombre>
+                <descripcion>Vertice Geodésico</descripcion>
+                <coordenadas>
+                    <longitud>-5.53</longitud>
+                    <latitud>43.424683</latitud>
+                    <altitud>604</altitud>
+                </coordenadas>
+                <distancia unidades="Km">2.76</distancia>
+                <imagenes>
+                    <imagen>pico.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Área recreativa</nombre>
+                <descripcion>Área recreativa de la ruta de las cercanías del cielo</descripcion>
+                <coordenadas>
+                    <longitud>-5.5226</longitud>
+                    <latitud>43.421749</latitud>
+                    <altitud>519</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1.2</distancia>
+                <imagenes>
+                    <imagen>recreativa.png</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Estatuas de madera</nombre>
+                <descripcion>Figuras de personas de madera</descripcion>
+                <coordenadas>
+                    <longitud>-5.541796</longitud>
+                    <latitud>43.411112</latitud>
+                    <altitud>269</altitud>
+                </coordenadas>
+                <distancia unidades="Km">2.9</distancia>
+                <imagenes>
+                    <imagen>figuras.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Plaza de Vega</nombre>
+                <descripcion>Fin de la ruta</descripcion>
+                <coordenadas>
+                    <longitud>-5.5575</longitud>
+                    <latitud>43.41056</latitud>
+                    <altitud>292</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1.4</distancia>
+                <imagenes>
+                    <imagen>plaza.jpg</imagen>
+                </imagenes>
+            </hito>
+        </hitos>
+        <planimetria>ruta2.kml</planimetria>
+        <altimetria>ruta2.svg</altimetria>
+    </ruta>
+
+    <ruta>
+        <nombre>Cueva de San Pedrín</nombre>
+        <tipo>Paisajística</tipo>
+        <transporte>A pie</transporte>
+        <duracion unidades="horas">1.35</duracion>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Ruta que pasa por la cueva de San pedrín y la cantera de Sariego</descripcion>
+        <publico>Apta para todos</publico>
+        <inicio>Aramanti, Camin de la Viona</inicio>
+        <direccion>33518 Sariego, Asturias</direccion>
+        <coordenadas>
+            <longitud>-5.584403414406851</longitud>
+            <latitud>43.41131803384679</latitud>
+            <altitud>298</altitud>
+        </coordenadas>
+        <referencias>
+            <referencia>https://www.lne.es/centro/2008/10/05/carcabada-pueblo-ejemplar-21634972.html</referencia>
+            <referencia>https://sariego.vivirasturias.com/poblaciones/c/0/i/61937632/la-rimada</referencia>
+            <referencia>https://es.wikipedia.org/wiki/Aramanti</referencia>
+        </referencias>
+        <recomendacion>3</recomendacion>
+        <hitos>
+            <hito>
+                <nombre>Cueva de San Pedrín</nombre>
+                <descripcion>Cueva donde se celebra la fista de San Pedrín</descripcion>
+                <coordenadas>
+                    <longitud>-5.591552</longitud>
+                    <latitud>43.414923</latitud>
+                    <altitud>293</altitud>
+                </coordenadas>
+                <distancia unidades="Km">0.65</distancia>
+                <imagenes>
+                    <imagen>cueva.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Capilla de San Pedrín</nombre>
+                <descripcion>Capilla cercana a la cueva de San Pedrín</descripcion>
+                <coordenadas>
+                    <longitud>-5.592558</longitud>
+                    <latitud>43.41526</latitud>
+                    <altitud>298</altitud>
+                </coordenadas>
+                <distancia unidades="Km">0.09</distancia>
+                <imagenes>
+                    <imagen>san_pedrin.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Cantera de Castañeda</nombre>
+                <descripcion>Cantera de piedra caliza</descripcion>
+                <coordenadas>
+                    <longitud>-5.597693</longitud>
+                    <latitud>43.420827</latitud>
+                    <altitud>406</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1.1</distancia>
+                <imagenes>
+                    <imagen>cantera.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>La Rimada</nombre>
+                <descripcion>Pueblo de maor altitud de Sariego</descripcion>
+                <coordenadas>
+                    <longitud>-5.59277</longitud>
+                    <latitud>43.42473</latitud>
+                    <altitud>466</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1</distancia>
+                <imagenes>
+                    <imagen>rimada.jpg</imagen>
+                </imagenes>
+            </hito>
+            <hito>
+                <nombre>Casa rural de Gonzalo Sariego</nombre>
+                <descripcion>Casa rural en mitad de la ruta</descripcion>
+                <coordenadas>
+                    <longitud>-5.5858</longitud>
+                    <latitud>43.4206</latitud>
+                    <altitud>349</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1.1</distancia>
+                <imagenes>
+                    <imagen>casa.jpg</imagen>
+                </imagenes>
+            </hito>
+
+            <hito>
+                <nombre>Aramanti</nombre>
+                <descripcion>Fin de la ruta</descripcion>
+                <coordenadas>
+                    <longitud>-5.584403414406851</longitud>
+                    <latitud>43.41131803384679</latitud>
+                    <altitud>298</altitud>
+                </coordenadas>
+                <distancia unidades="Km">1.3</distancia>
+                <imagenes>
+                    <imagen>aramanti.jpg</imagen>
+                </imagenes>
+            </hito>
+        </hitos>
+        <planimetria>ruta3.kml</planimetria>
+        <altimetria>ruta3.svg</altimetria>
+    </ruta>
+</rutas>

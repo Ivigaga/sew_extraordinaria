@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <meta name="author" content="Iván García García" />
+    <meta name="description" content="Muestra el tiempo en sariego para los próximos 7 días" />
+    <meta name="keywords" content="meteorología,Sariego" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Datos que describen el documento -->
+    <link rel="icon" href="multimedia/imagenes/escudo.ico" sizes="48x48" 
+        type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/meteorologia.js"></script>
+    <title>Guía Sariego: Meteorología</title>
+</head>
+
+<body>
+    <header>
+        <!-- Datos con el contenidos que aparece en el navegador -->
+        <h1><a title="Inicio" href="index.html">Guía Sariego</a></h1>
+        <nav>
+            <a title="Inicio" href="index.html">Inicio</a>
+            <a title="Gastronomía" href="gastronomia.html">Gastronomía</a>
+            <a title="Rutas" href="rutas.html">Rutas</a>
+            <a title="Meteorología" class="active" href="meteorología.html">Meteorología</a>
+            <a title="Juego"  href="juego.html">Juego</a>
+            <a title="Reservas" href="reservas.php">Reservas</a>
+            <a title="Ayuda" href="ayuda.html">Ayuda</a>
+        </nav>
+    </header>
+    <p>Estás en <a title="Inicio" href="index.html">Inicio</a> | Meteorología </p>
+    <main>
+        <h2>Información meteorológica</h2>
+        <section>
+        <h3>Tiempo La Vega (actual)</h3>
+        </section>
+
+    <!-- Sección para la previsión -->
+    <section >
+        <h3>Previsión próximos 7 días Sariego</h3>
+    </section>
+        <script>
+            var meteorologia = new Meteorologia();
+            meteorologia.mostrarTiempo();
+            meteorologia.mostrarPrevision();
+        </script>
+    </main>
+</body></html>

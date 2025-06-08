@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Cueva de San Pedrín</name>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+-5.584403414406851,43.41131803384679,298
+-5.591552,43.414923,293
+-5.592558,43.41526,298
+-5.597693,43.420827,406
+-5.59277,43.42473,466
+-5.5858,43.4206,349
+-5.584403414406851,43.41131803384679,298
+</coordinates>
+<altitudeMode>relativeToGround</altitudeMode>
+</LineString>
+<Style> id='lineaRoja'>
+<LineStyle>
+<color>#ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+</Document>
+</kml>

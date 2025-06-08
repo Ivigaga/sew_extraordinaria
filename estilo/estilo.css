@@ -1,0 +1,191 @@
+/*Especificidad 001*/
+body {
+    font-family: Tahoma,serif;
+    font-weight: normal;
+    font-size: medium;
+    background-color: #F0FFF1;
+    color: #000000;
+}
+
+/*Especificidad 001*/
+header{
+    /*background-color: #d01110;*/
+    background-color: #006607;
+    color: #FFFFFF;    
+}
+
+/*Especificidad 001*/
+h2{
+    font-size: 2em;
+
+}
+
+/*Especificidad 001*/
+h3{
+    font-size: 1.75em;
+}
+/*Especificidad 001*/
+h4{
+    font-size: 1.5em;
+}
+/*Especificidad 001*/
+h5{
+    font-size: 1.25em;
+}
+/*Especificidad 001*/
+h6{
+    font-size: 1em;
+}
+
+/*Especificidad 002*/
+header a{
+    text-decoration: none;
+    /*Hereda el color de fondo de header*/
+    color: #FFFFFF;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
+
+/*Especificidad 002*/
+header + p{
+    font-size: small;
+}
+
+/*Especificidad 001*/
+a{
+    /*Hereda el color de fondo de body*/
+    color: #0a0a00;
+    font-weight: bold;
+}
+/*Especificidad 012*/
+p a:hover{
+    background: #006607;
+    color: #FFFFFF;
+}
+/*Especificidad 011*/
+a.active{
+    background-color: #F0FFF1;
+    color: #000000;
+    text-decoration: underline;
+}
+
+/*Especificidad 001*/
+ol{
+    list-style:square;
+}
+/*Especificidad 002*/
+ol ul{
+    list-style:disc;
+}
+/*Especificidad 002*/
+dl dt{
+    font-weight: bold;
+}
+/*Especificidad 002*/
+dl dd{
+    font-style: italic;
+}
+/*Especificidad 001*/
+table {
+    border-style: solid;
+    border-color: #0a0a00;
+    
+}
+/*Especificidad 002*/
+table td{
+    border-style: solid;
+    border-width: 0.1vw;
+    border-color: #0a0a00;
+    
+}
+/*Especificidad 002*/
+table th{
+    border-style: solid;
+    border-width: 0.1vw;
+    border-color: #0a0a00;
+}
+
+/*Especificidad 013*/
+article > article button:first-of-type {
+    width: 2em;
+    height: 2em;
+    border: 0.2em solid black;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    /*Hereda el color de body*/
+    background-color: #fff;
+    font-size: 1em;
+}
+/*Especificidad 013*/
+article >article button:last-of-type {
+
+    width: 2em;
+    height: 2em;
+    border: 0.2em solid black;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    /*Hereda el color de body*/
+    background-color: #fff;
+    font-size: 1em;
+}
+
+/*Especificidad 002*/
+section > article {
+    border: 0.1em solid black;
+    border-radius: 1em;
+    /*Hereda el color de body*/
+    background-color: #FFFFFF;
+}
+/*Especificidad 013*/
+fieldset >ul {
+  list-style-type: none;
+  padding-left: 10%;
+}
+
+main > section:only-child {
+/*Hereda el color de body*/
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/*Especificidad 013*/
+main > section:only-child >button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 1em auto;
+  display: block;
+}
+/*Especificidad 013*/
+main > section:only-child >h2 {
+ text-align: center;
+ margin-top: 0%;
+}
+/*Especificidad 013*/
+main > section:only-child >h3 {
+ text-align: center;
+ margin-top: 0%;
+}
+/*Especificidad 013*/
+main > section:only-child >p {
+ text-align: center;
+ margin: 0%;
+}
+
+/*Especificidad 023*/
+main > section:only-child >p:last-child {
+    font-weight: bold;
+}
+
+/*Especificidad 001*/
+fieldset {
+  border: none;
+  padding: 0.5em;
+  margin: 0;
+}
+
+
+

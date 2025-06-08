@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="es"><head>
+    <meta name="author" content="Tu Nombre">
+    <meta name="description" content="Sistema de reservas turísticas">
+    <meta name="keywords" content="reservas, turismo, Asturias">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <meta charset="UTF-8">
+    <title>Reservas Turísticas</title>
+</head>
+
+<body>
+    <header>
+        <h1><a title="Inicio" href="index.html">Guía Sariego</a></h1>
+        <nav>
+            <a title="Inicio" href="index.html">Inicio</a>
+            <a title="Gastronomía" href="gastronomia.html">Gastronomía</a>
+            <a title="Rutas" href="rutas.html">Rutas</a>
+            <a title="Meteorología" href="meteorología.html">Meteorología</a>
+            <a title="Juego" href="juego.html">Juego</a>
+            <a title="Reservas" class="active" href="reservas.php">Reservas</a>
+            <a title="Ayuda" href="ayuda.html">Ayuda</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Sistema de Reservas</h2>
+        
+       
+        
+        
+                <p>Bienvenido, Iván García García  
+                   (<a href="reservas.php?logout=1">Cerrar sesión</a>)</p>
+
+            
+                            <p>Reserva realizada correctamente.</p>
+                    
+                        <!-- Lista de Recursos -->
+            <section>
+                <h3>Recursos Disponibles</h3>
+                                    <article>
+                        <h4>Visita a la Cueva San Pedrín</h4>
+                        <p>Visita al interior de la cueva, de gran importancia religiosa para el concejo</p>
+                        <p>Precio: 5.00€ </p>
+                        <form method="POST">
+                            <input type="hidden" name="id_recurso" value="2">
+                            <label>Plazas: <input type="number" name="cantidad" min="1" max="40" required=""></label>
+                            <label>Fecha: <input type="date" name="fecha" required=""></label>
+                            <label>Hora: <input type="time" name="hora" required=""></label>
+                            <button type="submit" name="reservar">Reservar</button>
+                        </form>
+                </article>
+                                    <article>
+                        <h4>Taberna la Casuca</h4>
+                        <p>Restaurante especializado en carne</p>
+                        <p>Precio: 20.00€ </p>
+                        <form method="POST">
+                            <input type="hidden" name="id_recurso" value="3">
+                            <label>Plazas: <input type="number" name="cantidad" min="1" max="50" required=""></label>
+                            <label>Fecha: <input type="date" name="fecha" required=""></label>
+                            <label>Hora: <input type="time" name="hora" required=""></label>
+                            <button type="submit" name="reservar">Reservar</button>
+                        </form>
+                </article>
+                                    <article>
+                        <h4>Mesón de Sariego</h4>
+                        <p>Restaurante, parrilla sidrería</p>
+                        <p>Precio: 15.00€ </p>
+                        <form method="POST">
+                            <input type="hidden" name="id_recurso" value="4">
+                            <label>Plazas: <input type="number" name="cantidad" min="1" max="40" required=""></label>
+                            <label>Fecha: <input type="date" name="fecha" required=""></label>
+                            <label>Hora: <input type="time" name="hora" required=""></label>
+                            <button type="submit" name="reservar">Reservar</button>
+                        </form>
+                </article>
+                                    <article>
+                        <h4>Ruta de las cercanías al cielo</h4>
+                        <p>Ruta guiada por los diferentes picos del concejo</p>
+                        <p>Precio: 10.00€ </p>
+                        <form method="POST">
+                            <input type="hidden" name="id_recurso" value="5">
+                            <label>Plazas: <input type="number" name="cantidad" min="1" max="20" required=""></label>
+                            <label>Fecha: <input type="date" name="fecha" required=""></label>
+                            <label>Hora: <input type="time" name="hora" required=""></label>
+                            <button type="submit" name="reservar">Reservar</button>
+                        </form>
+                </article>
+                                    <article>
+                        <h4>Casa Rufo</h4>
+                        <p>Bar en la capital del concejo</p>
+                        <p>Precio: 10.00€ </p>
+                        <form method="POST">
+                            <input type="hidden" name="id_recurso" value="6">
+                            <label>Plazas: <input type="number" name="cantidad" min="1" max="40" required=""></label>
+                            <label>Fecha: <input type="date" name="fecha" required=""></label>
+                            <label>Hora: <input type="time" name="hora" required=""></label>
+                            <button type="submit" name="reservar">Reservar</button>
+                        </form>
+                </article>
+                            </section>
+            
+            <!-- Reservas del Usuario -->
+            <section>
+                <h3>Mis Reservas</h3>
+                                    <ul>
+                                                    <li>
+                                Taberna la Casuca - 
+                                3 Personas -
+                                Total: 60€ - 
+                                Fecha: 13/06/2025 18:34                                <a href="reservas.php?anular=32">Anular</a>
+                            </li>
+                                            </ul>
+                            </section>
+            </main>
+
+
+</body></html>

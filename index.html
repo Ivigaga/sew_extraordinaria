@@ -1,0 +1,75 @@
+<!--
+En la página principal del proyecto, index.html, deberá utilizar ECMAScript y la biblioteca jQuery
+para:
+• Carrusel de fotos: un mínimo de 5 fotos con los principales recursos turísticos del
+concejo asturiano
+o Una de las imágenes del carrusel debe ser el mapa de situación del concejo
+o Las imágenes son archivos locales ubicados en la carpeta “multimedia”
+• Sección de noticias sobre el concejo (o lugares cercanos al concejo): consumiendo
+Servicios Web
+
+-->
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Iván García García" />
+    <meta name="description" content="Fotos y noticias sobre el concejo de Sariego" />
+    <meta name="keywords" content="Sariego,mapa,fotos,noticias" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Datos que describen el documento -->
+    <link rel="icon" href="multimedia/imagenes/escudo.ico" sizes="48x48" 
+        type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <title>Guía Sariego</title>
+</head>
+
+<body>
+    <header>
+        <!-- Datos con el contenidos que aparece en el navegador -->
+        <h1><a title="Inicio" href="index.html">Guía Sariego</a></h1>
+        <nav>
+            <a title="Inicio" class="active" href="index.html">Inicio</a>
+            <a title="Gastronomía" href="gastronomia.html">Gastronomía</a>
+            <a title="Rutas" href="rutas.html">Rutas</a>
+            <a title="Meteorología" href="meteorología.html">Meteorología</a>
+            <a title="Juego"  href="juego.html">Juego</a>
+            <a title="Reservas" href="reservas.php">Reservas</a>
+            <a title="Ayuda" href="ayuda.html">Ayuda</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Inicio</h2>
+            <article>
+                <h3>Recursos turísticos</h3>
+                 <article>
+                    <h4>Galería</h4>
+                    <img alt='Mapa de situacion' src="multimedia/imagenes/mapa_situacion.png" />
+                    <img alt='Iglesia de Santiago el Mayor' src="multimedia/imagenes/santiago.jpg" />
+                    <img alt='Iglesia de Santa María de Narzana' src="multimedia/imagenes/santa_maria.png" />
+                    <img alt='Cueva de San Pedrín' src="multimedia/imagenes/cueva.jpg" />
+                    <img alt='Capilla de San Pedrín' src="multimedia/imagenes/san_pedrin.png" />
+                    <button> &gt; </button>
+                <button> &lt; </button>
+                 </article>
+            </article>
+
+            <section>
+                <h3>Noticias recientes sobre Sariego</h3>
+            </section>
+
+            <script>
+                var carrusel=new Carrusel();
+                carrusel.createCarrusel();
+
+                var noticias=new Noticias();
+                noticias.cargarNoticias();
+            </script>
+
+    </main>
+</body></html>

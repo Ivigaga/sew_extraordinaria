@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <meta name="author" content="Iván García García" />
+    <meta name="description" content="Muestra rutass en el concejo de Sariego" />
+    <meta name="keywords" content="Sariego,senderismo,rutas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Datos que describen el documento -->
+    <link rel="icon" href="multimedia/imagenes/escudo.ico" sizes="48x48" 
+        type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <meta charset="UTF-8" />
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU" async defer></script>
+    <script src="js/rutas.js"></script>
+    <title>Guía Sariego: Rutas</title>
+</head>
+
+<body>
+    <header>
+        <!-- Datos con el contenidos que aparece en el navegador -->
+        <h1><a title="Inicio" href="index.html">Guía Sariego</a></h1>
+        <nav>
+            <a title="Inicio" href="index.html">Inicio</a>
+            <a title="Gastronomía" href="gastronomia.html">Gastronomía</a>
+            <a title="Rutas" class="active" href="rutas.html">Rutas</a>
+            <a title="Meteorología" href="meteorología.html">Meteorología</a>
+            <a title="Juego"  href="juego.html">Juego</a>
+            <a title="Reservas" href="reservas.php">Reservas</a>
+            <a title="Ayuda" href="ayuda.html">Ayuda</a>
+        </nav>
+    </header>
+    <p>Estás en <a title="Inicio" href="index.html">Inicio</a> | Rutas </p>
+    <main>
+    <h2>Rutas</h2>
+    <p>
+       Archivo:  <input type="file" aria-label="Archivo de texto" onchange="new Rutas().leerArchivoTexto(this.files)"/>
+    </p>
+    <p></p>
+
+    </main>
+</body>
+</html>

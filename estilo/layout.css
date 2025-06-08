@@ -1,0 +1,259 @@
+/*Especificidad 001*/
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+
+/*Especificidad 001*/
+nav {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+/*Especificidad 001*/
+table {
+    border-collapse: collapse;
+    max-width: 100vw;
+    text-align: left;
+}
+/*Especificidad 002*/
+table td {
+    text-align: center;
+}
+
+/*Especificidad 011*/
+th:nth-child(2) {
+    text-align: center;
+}
+
+/*Especificidad 001*/
+video{
+    width: 70%;
+    height:auto;
+    padding-left: 15%;
+}
+
+@media screen and (max-width: 480px) {
+    /*Especificidad 002*/
+    header + p{
+        display: none;
+    }
+    /*Especificidad 002*/
+    header nav{
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 530px) {
+    /*Especificidad 001*/
+    nav{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width: 531px) and (max-width: 585px) {
+
+    /*Especificidad 003*/
+    header nav a{
+        font-size: 0.9em;
+    }
+}
+
+/*Especificidad 023*/
+main >h2 + article:first-of-type:only-of-type  {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+    max-width: 50vw;
+}
+
+/*Especificidad 024*/
+main >h2 + article:first-of-type:only-of-type > article {
+    
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 */
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+/*Especificidad 025*/
+main >h2 + article:first-of-type:only-of-type > article > img {
+    
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 3em); /* Resta la altura del título */
+    top: 3em; /* Desplaza hacia abajo */
+    object-fit: contain;
+    border-radius: inherit;
+    transition: all 0.5s;
+}
+
+/*Especificidad 014*/
+main > article > article > button:first-of-type,
+main > article > article > button:last-of-type {
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+/*Especificidad 014*/
+main > article > article > button:first-of-type {
+    
+    right: 2%;
+}
+/*Especificidad 014*/
+main > article > article > button:last-of-type {
+    
+    left: 2%;
+}
+/*Especificidad 024*/
+main >h2 + article:first-of-type:only-of-type > h3 {
+    
+    margin: 0.2em 0;
+    text-align: center;
+}
+
+/*Especificidad 004*/
+main > article > article > h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 5; /* Encima de las imágenes */
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+/*Especificidad 001*/
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 0.5em;
+    max-width: 90vw;
+    margin-top: 5vh;
+    margin-left:5vw ;
+    margin-bottom:5vh ;
+}
+
+/*Especificidad 002*/
+section > h3{
+    width: 100%;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+/*Especificidad 002*/
+section > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 31.5%; /* 1. Permite crecimiento y reducción con base inicial del 31.5% */
+    min-width: 15em;  /* 2. Ancho mínimo relativo para forzar el wrap */
+    max-height: 100vh;
+    max-width: 31.5%;
+    padding: 0.2em;
+    text-align: center;
+}
+
+/*Especificidad 001*/
+svg {
+    width: 100%;
+    height: auto; /* Mantiene la proporción del viewBox */
+    max-width: 100%;
+    display: block;
+
+}
+/*Especificidad 002*/
+svg text {
+    font-size: 170% ; /* Tamaño base */
+}
+
+/*Especificidad 002*/
+main > div {
+    width: 100%;
+    height: 40em; /* Define un tamaño explícito */
+    
+}
+
+/*Especificidad 003*/
+main> article img{
+    max-width: 75vw;
+    max-height: 70vh;
+}
+ /*Especificidad 012*/
+main > section:only-child {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 1em;
+  max-width: 45vw;
+  margin: 2em auto;
+  padding: 1em;
+  
+}
+/*Especificidad 002*/
+main> img{
+    max-width: 75vw;
+}
+
+/*Especificidad 002*/
+article > section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90vw;
+    margin-left:5vw ;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+}
+/*Especificidad 001*/
+form {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  max-width: 50vw;
+}
+/*Especificidad 012*/
+form > label:nth-of-type(1) {
+  grid-column: 1 / -1; /* Ocupa toda la primera fila */
+}
+/*Especificidad 002*/
+form > button {
+  grid-column: 1 / -1; /* Centra el botón en la última fila */
+}
+
+/*Especificidad 012*/
+form > label:nth-of-type(2),
+form > label:nth-of-type(3) {
+  grid-row: 2;
+}
+/*Especificidad 002*/
+form input{
+    max-width: 33vw;
+}
+
