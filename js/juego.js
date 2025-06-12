@@ -55,6 +55,8 @@ class Juego {
   procesarRespuesta() {
     const opciones = this.ulOpciones.querySelectorAll('input[type="radio"]');
     let seleccion = -1;
+    var error= document.body.querySelector("main").querySelector("section  ul + p");
+    error.textContent = "";
     opciones.forEach((op) => {
       if (op.checked) {
         seleccion = parseInt(op.value);
@@ -62,7 +64,8 @@ class Juego {
     });
 
     if (seleccion === -1) {
-      alert("Debes seleccionar una respuesta.");
+      
+      error.textContent = "Debes seleccionar una respuesta.";
       return;
     }
 
@@ -105,7 +108,7 @@ class JuegoApp {
       new Pregunta("¿De qué no hay una foto en la web?", ["Un museo", "Una iglesia", "Un mapa", "Comida", "Una cueva"], 0),
       new Pregunta("¿Qué restaurante está en Sariego?", ["Asador Juan Luis", "Casa Ali", "Taberna La Casuca", "Bar Manolo", "El Mirador"], 2),
       new Pregunta("¿Dónde se pueden leer las noticias sobre el concejo?", ["Meteorología", "Gastronomía", "Ayuda", "Inicio", "Rutas"], 3),
-      new Pregunta("¿Qué se come en el Artroxu?", ["Fabada", "Arroz con leche", "Sidra", "Cachopo", "Pitu caleya"], 4),
+      new Pregunta("¿Qué se come en el Antroxu?", ["Fabada", "Arroz con leche", "Sidra", "Cachopo", "Pitu caleya"], 4),
       new Pregunta("¿De que trata el video que hay en la web?", ["Un museo", "El alcalde", "Un restaurante", "Una iglesia", "Las fiestas del concejo"], 2),
       new Pregunta("¿Cuál es el precio de la ruta de las cercanías al cielo?", ["15€", "10€", "20€", "5€", "Es gratis"], 1),
       new Pregunta("¿Cuál no es un dato que se necesite para crearse una cuenta?", ["Nombre", "Email", "Contraseña", "DNI", "Ninguno de los anteriores"], 3)

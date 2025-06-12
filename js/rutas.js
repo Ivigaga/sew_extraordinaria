@@ -45,11 +45,11 @@ class Rutas {
     const nav = document.createElement("section");
 
     const btnAnterior = document.createElement("button");
-    btnAnterior.textContent = "◄";
+    btnAnterior.textContent = "◄ Anterior";
     btnAnterior.onclick = () => this.mostrarAnterior();
 
     const btnSiguiente = document.createElement("button");
-    btnSiguiente.textContent = "►";
+    btnSiguiente.textContent = "Siguiente ►";
     btnSiguiente.onclick = () => this.mostrarSiguiente();
 
     var title = parent.querySelector("h3");
@@ -153,7 +153,7 @@ class Rutas {
 
   async formatRuotes(route, cabecera) {
     var nodes = route.children;
-    var texto = `<h${cabecera}>${nodes[0].textContent}</h${cabecera}>`;;
+    var texto = `<h${cabecera}>     ${nodes[0].textContent}     </h${cabecera}>`;;
     var a = document.createElement("article");
     for (var i = 0; i < nodes.length; i++) {
       var node = nodes[i];

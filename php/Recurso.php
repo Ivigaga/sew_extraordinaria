@@ -3,7 +3,7 @@ require_once 'Conexion.php';
 
 class Recurso {
     private $db;
-
+    private $recursos;
     public function __construct() {
         $conexion = new Conexion();
         $this->db = $conexion->connect();
@@ -16,7 +16,8 @@ class Recurso {
             JOIN tipo_recursos t ON r.Tipo_ID = t.ID
         ";
         $result = $this->db->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
+        $recursos =$result->fetch_all(MYSQLI_ASSOC);
+        return $recursos;
     }
 
     public function obtenerPorId($id) {

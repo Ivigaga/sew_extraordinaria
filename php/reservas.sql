@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `reservas2`
+-- Base de datos: `reservas`
 --
-CREATE DATABASE IF NOT EXISTS `reservas2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `reservas2`;
+CREATE DATABASE IF NOT EXISTS `reservas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `reservas`;
 
 -- --------------------------------------------------------
 

@@ -3,7 +3,7 @@ body {
     font-family: Tahoma,serif;
     font-weight: normal;
     font-size: medium;
-    background-color: #F0FFF1;
+    background-color: #F5FFF5;
     color: #000000;
 }
 
@@ -188,4 +188,29 @@ fieldset {
 }
 
 
+/*Especificidad 013*/
+h2 + p + p:last-of-type {
+/*Hereda el color de body*/ 
+    background-color: #EB0000;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+/*Especificidad 014*/
+h2 + p +p + p:nth-of-type(3) {
+/*Hereda el color de body*/ 
+    background-color: #EB0000;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+/*Especificidad 017*/
+h2+p+p+ p +section > h3 +p:nth-child(2){
+    font-weight: bold;
+    font-size: 1.2em;
+}
 
+/*Especificidad 024*/
+main > section:only-child >fieldset> p:last-of-type {
+    font-weight: bold;
+    /*Hereda el color de fondo de body*/
+    color: #B30000;
+}

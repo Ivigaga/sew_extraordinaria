@@ -46,6 +46,23 @@ class Reserva {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function obtenerPresupuesto($usuario_id) {
+    $stmt = $this->db->prepare("
+        SELECT SUM(ra.Precio) AS total
+        FROM reservas_actuales ra
+        WHERE ra.Usuario_ID = ? AND ra.Fecha >= CURDATE()
+    ");
+
+    $stmt->bind_param('i', $usuario_id);
+    $stmt->execute();
+
+    $resultado = $stmt->get_result();
+    $fila = $resultado->fetch_assoc();
+
+    // Devuelve 0 si no hay reservas
+    return $fila['total'] !== null ? (float)$fila['total'] : 0.0;
+}
+
     public function eliminar($reserva_id) {
         $this->db->begin_transaction();
 

@@ -10,6 +10,8 @@ $recursoObj = new Recurso();
 
 $mensaje = '';
 $error = '';
+// Obtener recursos
+$recursos = $recursoObj->listar();
 
 // Procesar registro
 if (isset($_POST['registro'])) {
@@ -22,7 +24,13 @@ if (isset($_POST['registro'])) {
         if ($registro === "email duplicado") {
             $error = 'Email ya registrado.';
         } else {
-            $mensaje = 'Registro exitoso. Por favor, inicia sesión.';
+            //$mensaje = 'Registro exitoso. Por favor, inicia sesión.';
+            $usuario = $usuarioObj->login($email, $contrasena);
+            if ($usuario) {
+                $_SESSION['usuario'] = $usuario;
+            } else {
+                $error = 'Erro al inicar sesión. Por favor, inicie sesión.';
+            }
         }
     } else {
         $error = 'Error en el registro.';
@@ -53,7 +61,7 @@ if (isset($_GET['logout'])) {
 if (isset($_POST['reservar'])) {
     if (isset($_SESSION['usuario'])) {
         $id_usuario = $_SESSION['usuario']['ID'];
-        $id_recurso = $_POST['id_recurso'];
+        $id_recurso = $recursos[$_POST['reservar']]['ID'];
         $cantidad = $_POST['cantidad'];
         $fecha = $_POST['fecha'];
         $hora = $_POST['hora'];
@@ -78,6 +86,7 @@ if (isset($_POST['reservar'])) {
     }
 }
 
+/*
 // Procesar anulación
 if (isset($_GET['anular'])) {
     if (isset($_SESSION['usuario'])) {
@@ -89,14 +98,32 @@ if (isset($_GET['anular'])) {
         }
     }
 }
-
-// Obtener recursos
-$recursos = $recursoObj->listar();
-
-// Obtener reservas del usuario
+*/
 $reservas = [];
+$presupuesto= 0;
 if (isset($_SESSION['usuario'])) {
     $reservas = $reservaObj->listarPorUsuario($_SESSION['usuario']['ID']);
+    $presupuesto = $reservaObj->obtenerPresupuesto($_SESSION['usuario']['ID']);
+}
+// Procesar anulación
+if (isset($_GET['anular'])) {
+    $index = $_GET['anular'];
+    if($index>=0  && $index < sizeof($reservas)) {
+        if (isset($_SESSION['usuario'])) {
+            $id_reserva =$reservas[$index]['ID'];
+            if ($reservaObj->eliminar($id_reserva)) {
+            
+            } else {
+                $error = 'Error al anular la reserva.';
+            }
+        }
+    }
+}
+
+// Obtener reservas del usuario
+if (isset($_SESSION['usuario'])) {
+    $reservas = $reservaObj->listarPorUsuario($_SESSION['usuario']['ID']);
+    $presupuesto = $reservaObj->obtenerPresupuesto($_SESSION['usuario']['ID']);
 }
 ?>
 
@@ -134,10 +161,14 @@ if (isset($_SESSION['usuario'])) {
         <?php if (!isset($_SESSION['usuario'])): ?>
             <?php if ($mensaje): ?>
                 <p ><?= $mensaje ?></p>
+            <?php else: ?>
+                <p></p>
             <?php endif; ?>
-        
+            
             <?php if ($error): ?>
                 <p><?= $error ?></p>
+            <?php else: ?>
+                <p></p>
             <?php endif; ?>
             <!-- Formulario de Registro -->
             <section>
@@ -167,48 +198,63 @@ if (isset($_SESSION['usuario'])) {
             
             <?php if ($mensaje): ?>
                 <p ><?= $mensaje ?></p>
+                <?php else: ?>
+                <p></p>
             <?php endif; ?>
         
             <?php if ($error): ?>
                 <p><?= $error ?></p>
+                <?php else: ?>
+                <p></p>
             <?php endif; ?>
-            <!-- Lista de Recursos -->
-            <section>
-                <h3>Recursos Disponibles</h3>
-                <?php foreach ($recursos as $recurso): ?>
-                    <article >
-                        <h4><?= $recurso['Nombre'] ?></h4>
-                        <p><?= $recurso['Descripcion'] ?></p>
-                        <p>Precio: <?= $recurso['Precio'] ?>€ </p>
-                        <form method="POST">
-                            <input type="hidden" name="id_recurso" value="<?= $recurso['ID'] ?>">
-                            <label>Plazas: <input type="number" name="cantidad" min="1" max="<?= $recurso['Plazas'] ?>" required></label>
-                            <label>Fecha: <input type="date" name="fecha" required></label>
-                            <label>Hora: <input type="time" name="hora" required></label>
-                            <button type="submit" name="reservar">Reservar</button>
-                        </form>
-                </article>
-                <?php endforeach; ?>
-            </section>
-            
+
             <!-- Reservas del Usuario -->
             <section>
                 <h3>Mis Reservas</h3>
                 <?php if (empty($reservas)): ?>
                     <p>No tienes reservas realizadas.</p>
                 <?php else: ?>
+                    <p>Total: <?= $presupuesto ?>€</p>
                     <ul>
+                        <?php $i =0; ?>
                         <?php foreach ($reservas as $reserva): ?>
                             <li>
                                 <?= $reserva['recurso_nombre'] ?> - 
                                 <?= $reserva['Plazas'] ?> Personas -
                                 Total: <?= $reserva['precio_total'] ?>€ - 
                                 Fecha: <?= date('d/m/Y', strtotime($reserva['Fecha'])) ?> <?= date('H:i', strtotime($reserva['Hora'])) ?>
-                                <a href="reservas.php?anular=<?= $reserva['ID'] ?>">Anular</a>
+                                <a href="reservas.php?anular=<?= $i?>">Anular</a>
                             </li>
+                            <?php $i++; ?>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
+            </section>
+            <!-- Lista de Recursos -->
+            <section>
+                <h3>Recursos Disponibles</h3>
+                <?php $i =0; ?>
+                <?php foreach ($recursos as $recurso): ?>
+                    <article >
+                        <h4><?= $recurso['Nombre'] ?></h4>
+                        <p><?= $recurso['Descripcion'] ?></p>
+                        <?php if (time() < strtotime($recurso['Fecha_Inicio'])): ?>
+                             <p>Desde el <?= date('d/m/Y', strtotime($recurso['Fecha_Inicio'])) ?> hasta el <?= date('d/m/Y', strtotime($recurso['Fecha_Fin'])) ?></p>
+                        <?php else: ?>
+                        <p>Hasta el <?= date('d/m/Y', strtotime($recurso['Fecha_Fin'])) ?></p>
+                        <?php endif; ?>
+                        <p>Horario: <?= date('H:i', strtotime($recurso['Hora_inicio'])) ?> - <?= date('H:i', strtotime($recurso['Hora_fin'])) ?></p>
+                        <p>Precio: <?= $recurso['Precio'] ?>€ </p>
+                        <form method="POST">
+                            <!--<input type="hidden" name="id_recurso" value="<?= $recurso['ID'] ?>"> -->
+                            <label>Plazas: <input type="number" name="cantidad" min="1" max="<?= $recurso['Plazas'] ?>" required></label>
+                            <label>Fecha: <input type="date" name="fecha" required></label>
+                            <label>Hora: <input type="time" name="hora" required></label>
+                            <button type="submit" name="reservar" value="<?= $i ?>">Reservar</button>
+                        </form>
+                        <?php $i++; ?>
+                </article>
+                <?php endforeach; ?>
             </section>
         <?php endif; ?>
     </main>

@@ -150,9 +150,9 @@ section {
     align-items: stretch;
     gap: 0.5em;
     max-width: 90vw;
-    margin-top: 5vh;
-    margin-left:5vw ;
-    margin-bottom:5vh ;
+    margin-top: 2vh;
+    margin-left: 5vw ;
+    
 }
 
 /*Especificidad 002*/
@@ -197,6 +197,7 @@ main > div {
 
 /*Especificidad 003*/
 main> article img{
+    min-width: 35vw;
     max-width: 75vw;
     max-height: 70vh;
 }
@@ -214,6 +215,11 @@ main > section:only-child {
 /*Especificidad 002*/
 main> img{
     max-width: 75vw;
+}
+
+/*Especificidad 002*/
+ul img{
+    max-width: 60vw;
 }
 
 /*Especificidad 002*/
@@ -236,7 +242,7 @@ form {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  max-width: 50vw;
+  max-width: 80%;
 }
 /*Especificidad 012*/
 form > label:nth-of-type(1) {
@@ -254,6 +260,97 @@ form > label:nth-of-type(3) {
 }
 /*Especificidad 002*/
 form input{
+    margin-top: 0.5em;
     max-width: 33vw;
 }
 
+/*Especificidad 002*/
+article h4{
+
+    margin-bottom: 0.5em;
+}
+
+/*Especificidad 016*/
+main > h2 + p + p + p + section + section:last-of-type > article {
+
+    gap: 0em;
+
+}
+
+/*Especificidad 019*/
+main > h2 + p + p + p + section + section:last-of-type > article p {
+
+    margin-bottom: 0.75em;
+    margin-top: 0em;
+}
+/*Especificidad 016*/
+main > h2 + p + p + p + section:first-of-type{
+    flex-direction: column;
+    align-content: center;
+    gap: 0.2em;
+    align-items: center;
+}
+/*Especificidad 001*/
+hr{
+  border-top: 0.1em solid black; 
+  width: 100%;  /* Ancho del 50% del elemento padre */
+  margin-bottom: 0em;
+}
+
+@media screen and (max-width: 480px) {
+
+    /*Especificidad 002*/
+    section > article{
+        /*Da un warning por redefinir el ancho máximo y el gap*/
+        max-width: 100%;
+        gap:0em;
+    }
+}
+
+@media screen and (max-height:480px) {
+    /*Especificidad 002*/
+    section > article{
+        /*Da un warning por redefinir el ancho máximo y el gap*/
+        max-width: 100%;
+        /*Da 2 warnings por redefinir column-gap y row-gap. Ponen que es en la línea 0 pero es por esta regla*/
+        gap:0em;
+    }
+    
+    /*Especificidad 003*/
+    section >article >h4{
+        margin:0em;
+        font-size:1.25em;
+    }
+    /*Especificidad 003*/
+    section >article >p{
+        margin-top:0em;
+        margin-bottom: 0.6em;
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 800px) {
+    /*Especificidad 002*/
+    section > article{
+        /*Da un warning por redefinir el ancho máximo*/
+        max-width: 50%;
+    }
+}
+
+/*Especificidad 013*/
+h2 + p + p:last-of-type {
+    width: fit-content;
+}
+/*Especificidad 014*/
+h2 + p +p + p:nth-of-type(3) {
+    width: fit-content;
+}
+/*Especificidad 0010*/
+main > h2 +p+p+p+ section +section >article >form > button{
+    width: 50%;
+    height: 120%;
+}
+/*Especificidad 002*/
+h3 > button{
+    height: 2em;
+}
