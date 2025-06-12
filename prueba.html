@@ -1,130 +1,50 @@
 <!DOCTYPE HTML>
-
-<html lang="es">
 <html lang="es"><head>
     <meta name="author" content="Iván García García">
-    <meta name="description" content="Sistema de reservas turísticas">
-    <meta name="keywords" content="reservas, turismo, Asturias">
+    <meta name="description" content="Muestra rutass en el concejo de Sariego">
+    <meta name="keywords" content="Sariego,senderismo,rutas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Datos que describen el documento -->
     <link rel="icon" href="multimedia/imagenes/escudo.ico" sizes="48x48" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
     <link rel="stylesheet" type="text/css" href="estilo/layout.css">
     <meta charset="UTF-8">
-    <title>Guía Sariego: Reservas</title>
-</head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU" async="" defer=""></script>
+    <script src="js/rutas.js"></script>
+    <title>Guía Sariego: Rutas</title>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/61/4a/intl/es_ALL/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/61/4a/intl/es_ALL/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/61/4a/intl/es_ALL/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/61/4a/intl/es_ALL/geometry.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/61/4a/intl/es_ALL/poly.js"></script></head>
 
 <body>
     <header>
+        <!-- Datos con el contenidos que aparece en el navegador -->
         <h1><a title="Inicio" href="index.html">Guía Sariego</a></h1>
         <nav>
             <a title="Inicio" href="index.html">Inicio</a>
             <a title="Gastronomía" href="gastronomia.html">Gastronomía</a>
-            <a title="Rutas" href="rutas.html">Rutas</a>
+            <a title="Rutas" class="active" href="rutas.html">Rutas</a>
             <a title="Meteorología" href="meteorología.html">Meteorología</a>
             <a title="Juego" href="juego.html">Juego</a>
-            <a title="Reservas" class="active" href="reservas.php">Reservas</a>
+            <a title="Reservas" href="reservas.php">Reservas</a>
             <a title="Ayuda" href="ayuda.html">Ayuda</a>
         </nav>
     </header>
-    
+    <p>Estás en <a title="Inicio" href="index.html">Inicio</a> | Rutas </p>
     <main>
-        <h2>Sistema de Reservas</h2>
-        
-                <p>Bienvenido, Iván García García  
-                   (<a href="reservas.php?logout=1">Cerrar sesión</a>)</p>
+    <h2>Rutas</h2>
+    <label>
+       Archivo:  <input type="file" onchange="new Rutas().leerArchivoTexto(this.files)">
+    </label>
+    <p></p>
 
-            
-                            <p></p>
-                    
-                            <p>La fecha de reserva no puede ser anterior a la actual.</p>
-                
-            <!-- Reservas del Usuario -->
-            <section>
-                <h3>Mis Reservas</h3>
-                                    <p>Total: 5€</p>
-                    <ul>
-                                                                            <li>
-                                Visita a la Cueva San Pedrín - 
-                                1 Personas -
-                                Total: 5€ - 
-                                Fecha: 12/06/2025 19:58                                <a href="reservas.php?anular=0">Anular</a>
-                            </li>
-                                                                        </ul>
-                            </section>
-            <!-- Lista de Recursos -->
-            <section>
-                <h3>Recursos Disponibles</h3>
-                                                    <article>
-                        <h4>Visita a la Cueva San Pedrín</h4>
-                        <p>Visita al interior de la cueva, de gran importancia religiosa para el concejo</p>
-                                                <p>Hasta el 31/12/2035</p>
-                                                <p>Horario: 09:00 - 20:00</p>
-                        <p>Precio: 5.00€ </p>
-                        <form method="POST">
-                            <!--<input type="hidden" name="id_recurso" value="2"> -->
-                            <label>Plazas: <input type="number" name="cantidad" min="1" max="40" required=""></label>
-                            <label>Fecha: <input type="date" name="fecha" required=""></label>
-                            <label>Hora: <input type="time" name="hora" required=""></label>
-                            <button type="submit" name="reservar" value="0">Reservar</button>
-                        </form>
-                                        </article>
-                                    <article>
-                        <h4>Taberna la Casuca</h4>
-                        <p>Restaurante especializado en carne</p>
-                                                <p>Hasta el 16/09/2025</p>
-                                                <p>Horario: 09:00 - 23:00</p>
-                        <p>Precio: 20.00€ </p>
-                        <form method="POST">
-                            <!--<input type="hidden" name="id_recurso" value="3"> -->
-                            <label>Plazas: <input type="number" name="cantidad" min="1" max="50" required=""></label>
-                            <label>Fecha: <input type="date" name="fecha" required=""></label>
-                            <label>Hora: <input type="time" name="hora" required=""></label>
-                            <button type="submit" name="reservar" value="1">Reservar</button>
-                        </form>
-                                        </article>
-                                    <article>
-                        <h4>Mesón de Sariego</h4>
-                        <p>Restaurante, parrilla sidrería</p>
-                                                <p>Hasta el 15/08/2025</p>
-                                                <p>Horario: 13:00 - 23:00</p>
-                        <p>Precio: 15.00€ </p>
-                        <form method="POST">
-                            <!--<input type="hidden" name="id_recurso" value="4"> -->
-                            <label>Plazas: <input type="number" name="cantidad" min="1" max="40" required=""></label>
-                            <label>Fecha: <input type="date" name="fecha" required=""></label>
-                            <label>Hora: <input type="time" name="hora" required=""></label>
-                            <button type="submit" name="reservar" value="2">Reservar</button>
-                        </form>
-                                        </article>
-                                    <article>
-                        <h4>Ruta de las cercanías al cielo</h4>
-                        <p>Ruta guiada por los diferentes picos del concejo</p>
-                                                     <p>Desde el 18/06/2025 hasta el 28/08/2025</p>
-                                                <p>Horario: 08:00 - 19:00</p>
-                        <p>Precio: 10.00€ </p>
-                        <form method="POST">
-                            <!--<input type="hidden" name="id_recurso" value="5"> -->
-                            <label>Plazas: <input type="number" name="cantidad" min="1" max="20" required=""></label>
-                            <label>Fecha: <input type="date" name="fecha" required=""></label>
-                            <label>Hora: <input type="time" name="hora" required=""></label>
-                            <button type="submit" name="reservar" value="3">Reservar</button>
-                        </form>
-                                        </article>
-                                    <article>
-                        <h4>Casa Rufo</h4>
-                        <p>Bar en la capital del concejo</p>
-                                                <p>Hasta el 05/07/2025</p>
-                                                <p>Horario: 09:00 - 22:30</p>
-                        <p>Precio: 10.00€ </p>
-                        <form method="POST">
-                            <!--<input type="hidden" name="id_recurso" value="6"> -->
-                            <label>Plazas: <input type="number" name="cantidad" min="1" max="40" required=""></label>
-                            <label>Fecha: <input type="date" name="fecha" required=""></label>
-                            <label>Hora: <input type="time" name="hora" required=""></label>
-                            <button type="submit" name="reservar" value="4">Reservar</button>
-                        </form>
-                                        </article>
-                            </section>
-            </main>
+    <article><h3><button>◄ Anterior</button>     La Vega-Acéu     <button>Siguiente ►</button></h3><p>tipo: Senderismo</p><p>transporte: A pie</p><p>duracion: 1.5 horas</p><p>agencia: Sin agencia</p><p>descripcion: Ruta que va desde La Vega a Acéu</p><p>publico: Apta para todos</p><p>inicio: Plaza de Vega</p><p>direccion: Plaza de Casimiro Vega, 44, 33518 La Vega, Asturias</p><h3>coordenadas</h3><p>longitud: -5.5575</p><p>latitud: 43.41056</p><p>altitud: 292</p><h3>referencias</h3><p><a href="https://es.wikipedia.org/wiki/Vega_(Sariego)">https://es.wikipedia.org/wiki/Vega_(Sariego)</a></p><p><a href="https://paisaje.asturias.me/comarca-de-la-sidra/c/0/i/77670629/pozu-salau-el">https://paisaje.asturias.me/comarca-de-la-sidra/c/0/i/77670629/pozu-salau-el</a></p><p><a href="https://www.lne.es/centro/2008/10/05/carcabada-pueblo-ejemplar-21634972.html">https://www.lne.es/centro/2008/10/05/carcabada-pueblo-ejemplar-21634972.html</a></p><p>recomendacion: 8</p><h3>hitos</h3><h4>Fuente Pozu Salau</h4><p>descripcion: Fuente cuyo nivel del agua sube y baja al ritmo del Mar Cantábrico</p><h5>coordenadas</h5><p>longitud: -5.545008</p><p>latitud: 43.410651</p><p>altitud: 278</p><p>distancia: 1.1 Km</p><h5>imagenes</h5><img alt="fuente" src="multimedia/imagenes/fuente.jpg"><h4>Estatuas de madera</h4><p>descripcion: Figuras de personas de madera</p><h5>coordenadas</h5><p>longitud: -5.541796</p><p>latitud: 43.411112</p><p>altitud: 269</p><p>distancia: 0.3 Km</p><h5>imagenes</h5><img alt="figuras" src="multimedia/imagenes/figuras.jpg"><h4>Premio al pueblo ejemplar</h4><p>descripcion: Premio al pueblo ejemplar del concejo, dado a Carcabada en el 2008</p><h5>coordenadas</h5><p>longitud: -5.539354</p><p>latitud: 43.40946</p><p>altitud: 284</p><p>distancia: 0.3 Km</p><h5>imagenes</h5><img alt="premio" src="multimedia/imagenes/premio.jpg"><h4>Iglesia de San Román</h4><p>descripcion: Templo católico de estilo románico</p><h5>coordenadas</h5><p>longitud: -5.516392</p><p>latitud: 43.408092</p><p>altitud: 304</p><p>distancia: 2.6 Km</p><h5>imagenes</h5><img alt="san_roman" src="multimedia/imagenes/san_roman.jpg"><h4>Acéu</h4><p>descripcion: Fin de la ruta</p><h5>coordenadas</h5><p>longitud: -5.514832</p><p>latitud: 43.406689</p><p>altitud: 327</p><p>distancia: 0.6 Km</p><h5>imagenes</h5><img alt="aceu" src="multimedia/imagenes/aceu.jpg"></article><h3>Planimetria de la ruta</h3><div><div style="height: 100%; width: 100%;"></div></div><h3>Altimetría de la ruta</h3><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 1800 450"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1800 450">
+<polyline points="279.6610169491526,43.90243902439024 587.2881355932209,60.97560975609756 671.1864406779658,71.95121951219512 755.0847457627128,53.65853658536585 1482.203389830508,29.268292682926827 1650.0,1.2195121951219512 1650.0,401.2195121951219 279.6610169491526,401.2195121951219 279.6610169491526,43.90243902439024 " style="fill:white;stroke:red;stroke-width:4"></polyline>
+<text x="259.6610169491526" y="93.90243902439025" fill="black">Inicio</text>
+<text x="567.2881355932209" y="110.97560975609755" fill="black">Fuente Pozu Salau</text>
+<text x="651.1864406779658" y="121.95121951219512" fill="black">Estatuas de madera</text>
+<text x="735.0847457627128" y="103.65853658536585" fill="black">Premio al pueblo ejemplar</text>
+<text x="1462.203389830508" y="79.26829268292683" fill="black">Iglesia de San Román</text>
+<text x="1630.0" y="51.21951219512195" fill="black">Acéu</text>
+</svg></svg></main>
 
 </body></html>
